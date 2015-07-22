@@ -8,6 +8,7 @@
 //: sirve para imprimir **"Hola Mundo!"** solo se
 //: requiere **una línea** para escribir este programa:
 println("Hola Mundo!") // View on Assitant Editor
+println("Something is working") // My line :D
 //: A diferencia de otros lenguajes, como Java y C/C++, **no** es necesario:
 //: * Definir una función y/o clase, e.g. *main()*
 //: * Importar alguna librería para imprimir, e.g. *<sdtio.h>*
@@ -19,7 +20,7 @@ println("Hola Mundo!") // View on Assitant Editor
 //: ## 1.2 DATOS
 //: -----
 //: ### 1.2.1 VARIABLES (var)
-var precio = 1_200.00
+var precio = 1_200.00 // Se usa '_' como separador
 var dólar = 15.75  // ó
 var pesos = precio * dólar
 //: Tipo de dato inferido (implícito)
@@ -103,7 +104,8 @@ do { println(i++) } while i<5
 //: ### 1.3.4 FUNCIONES
 func fib(n:Int) -> Int {
     switch n {
-    case 0, 1: // "let x where x<2", "_ where n<2"
+    //case 0, 1: // "let x where x<2", "_ where n<2" fails with negative
+    case let _ where n < 2:
         return 1
     default:
         return fib(n-1) + fib(n-2)
