@@ -15,11 +15,13 @@ import Foundation
 let intentos = 5
 let oculto = randomNum(1...1000)
 
+loop:
 for var i = 1; i < intentos; i++ {
     let num = inputNum("Anota número") ?? 0
     switch num {
     case _ where  num == oculto:
         println("Ganaste")
+        break loop
     case _ where num > 0 && num < oculto:
         println("Piensa un numero mayor")
     case _ where num > 0 && num > oculto:
@@ -29,9 +31,7 @@ for var i = 1; i < intentos; i++ {
         println("Por favor ingresa un valor")
     }
     
-    if num==oculto {
-        break
-    } else if i == intentos {
+    if i == intentos {
         println()
     }
 }
